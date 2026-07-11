@@ -223,6 +223,13 @@ This project emphasizes practical QA database testing techniques, including:
 # 🚀 Current Status
 
 **Current Sprint:** Sprint 0 — Project Initialization
+- [x] Day 1 - Environment Setup
+- [ ] Day 2 - Database Setup
+- [ ] Day 3 - Schema Exploration
+- [ ] Day 4 - Jira Planning
+- [ ] Day 5 - Repository Organization
+- [ ] Day 6 - QA Documentation
+- [ ] Day 7 - Sprint Review
 
 ### Current Objectives
 
