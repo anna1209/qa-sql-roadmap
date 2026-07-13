@@ -1,172 +1,89 @@
-# QA Engineer Portfolio Bootcamp
-
-> A project-based roadmap for learning SQL, database testing, Agile workflows, and building a professional QA Engineer portfolio.
+# QA Engineer Portfolio — SQL, Database Testing & Agile QA Workflows
 
 ![Project Status](https://img.shields.io/badge/status-In%20Progress-blue)
 ![SQL](https://img.shields.io/badge/SQL-MySQL-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## 📖 About This Project
-
-This repository documents my journey of becoming a Software Quality Assurance (QA) Engineer through a hands-on, project-based approach.
-
-Instead of completing isolated SQL exercises, this project simulates working as a QA Engineer on a real software team. Throughout the project, I will use SQL to validate application data, investigate defects, write test cases, document findings, and manage work using Agile practices.
-
-The goal is not only to improve my SQL skills but also to demonstrate how those skills are applied in real-world software testing.
+A hands-on portfolio project demonstrating SQL proficiency, database testing methodology, and Agile QA practices — built by simulating the day-to-day work of a QA Engineer on a software team, rather than completing isolated tutorial exercises.
 
 ---
 
-# 🎯 Project Objectives
+## What This Project Demonstrates
 
-* Learn SQL from a QA Engineer's perspective.
-* Practice database testing using a realistic sample application.
-* Develop strong data validation and defect investigation skills.
-* Build a professional GitHub portfolio.
-* Simulate Agile development using Jira.
-* Document work using industry-standard QA practices.
-* Prepare for QA Engineer technical interviews.
+* **SQL fluency**: fundamentals through joins, subqueries, window functions, CTEs, and date functions
+* **Database design**: a custom, AI-generated sample database (schema, seed data) built from scratch to serve as a realistic testing target, rather than relying on a pre-built dataset
+* **Database testing**: data integrity checks, referential integrity validation, duplicate/missing-data detection, business rule verification
+* **Defect investigation**: root-cause analysis using SQL against a realistic schema
+* **QA documentation**: test cases, bug reports, and validation queries written to industry standards
+* **Agile process**: sprint planning and tracking in Jira, with sprint reviews and retrospectives committed alongside the code
 
----
-
-# 🛠 Technology Stack
-
-| Tool                      | Purpose                         |
-| ------------------------- | ------------------------------- |
-| MySQL                     | Database                        |
-| MySQL Workbench / DBeaver | SQL Client                      |
-| Git                       | Version Control                 |
-| GitHub                    | Portfolio                       |
-| Jira                      | Agile Project Management        |
-| VS Code                   | Documentation & SQL Development |
+Each item below links out once the corresponding work is committed, so this repo can be reviewed section by section rather than read start to finish.
 
 ---
 
-# 📂 Repository Structure
+## Repository Structure
 
 ```text
 qa-engineer-portfolio-bootcamp/
 │
-├── docs/
+├── bug-investigations/     # Simulated defect investigations with root-cause analysis
+├── database/                # AI-generated sample database
+│   ├── docs/                  # Schema overview, table reference, business rules, ER diagram
+│   ├── schema/                # SQL scripts to create the database schema
+│   └── seed-data/             # SQL scripts to populate sample data
+│   └── checks/                # Sanity-check queries confirming the database was built correctly
+├── docs/                   # Project charter, test strategy, and templates used across project
 │   ├── project-charter.md
 │   ├── test-strategy.md
-│   ├── coding-standards.md
-│   ├── schema-overview.md
-│   ├── sprint-reviews/
-│   └── retrospectives/
-│
-├── sql/
-│   ├── fundamentals/
-│   ├── joins/
-│   ├── aggregation/
-│   ├── subqueries/
-│   ├── window-functions/
-│   ├── ctes/
-│   └── date-functions/
-│
-├── validation/
-│   ├── customer/
-│   ├── inventory/
-│   ├── orders/
-│   └── reporting/
-│
-├── bug-investigations/
-│
-├── test-cases/
-│
-├── reports/
-│
-├── interview-prep/
-│
-├── leetcode/
-│
-└── README.md
+│   └── templates/
+│       └── daily-template.md
+├── leetcode/                # SQL problem-solving practice
+├── portfolio/               # Polished, portfolio-ready deliverables
+├── sprint-workbooks/        # Daily checklists per sprint (goals, tasks, Jira IDs, reflections)
+│   └── sprint-00/
+│       └── day-01.md
+├── sql/                     # SQL practice organized by concept (joins, subqueries, window functions, etc.)
+└── test-cases/               # Written QA test cases
 ```
 
 ---
 
-# 📅 Project Roadmap
+## Technology Stack
 
-The project is organized into 12 Agile sprints.
-
-| Sprint    | Focus                                    |
-| --------- | ---------------------------------------- |
-| Sprint 0  | Project Setup & Planning                 |
-| Sprint 1  | SQL Fundamentals                         |
-| Sprint 2  | Filtering & Aggregation                  |
-| Sprint 3  | SQL JOINs                                |
-| Sprint 4  | Advanced JOINs & Reporting               |
-| Sprint 5  | Subqueries                               |
-| Sprint 6  | Window Functions                         |
-| Sprint 7  | CTEs & Date Functions                    |
-| Sprint 8  | Database Validation                      |
-| Sprint 9  | Bug Investigation                        |
-| Sprint 10 | Reporting & QA Scenarios                 |
-| Sprint 11 | Portfolio Polish & Interview Preparation |
+| Tool                      | Purpose                         |
+| ------------------------- | -------------------------------- |
+| MySQL                     | Database                         |
+| MySQL Workbench / DBeaver | SQL client                       |
+| Jira                      | Agile project management         |
+| Git / GitHub               | Version control & portfolio host |
+| VS Code                   | Documentation & SQL development  |
 
 ---
 
-# 📚 Learning Workflow
+## Project Roadmap
 
-Every SQL concept follows the same process:
+Work is organized into 12 Agile sprints, each producing a reviewable deliverable.
 
-```text
-Learn SQL Concept
-        ↓
-Practice SQL Syntax
-        ↓
-Solve SQL Challenge
-        ↓
-Apply to Portfolio Database
-        ↓
-Create QA Validation Query
-        ↓
-Write Test Case
-        ↓
-Investigate Simulated Bug
-        ↓
-Commit to GitHub
-        ↓
-Complete Jira Story
-```
+| Sprint    | Focus                                     |
+| --------- | ------------------------------------------ |
+| Sprint 0  | Project setup & planning                    |
+| Sprint 1  | SQL fundamentals                            |
+| Sprint 2  | Filtering & aggregation                     |
+| Sprint 3  | SQL joins                                   |
+| Sprint 4  | Advanced joins & reporting                  |
+| Sprint 5  | Subqueries                                  |
+| Sprint 6  | Window functions                            |
+| Sprint 7  | CTEs & date functions                       |
+| Sprint 8  | Database validation                         |
+| Sprint 9  | Bug investigation                           |
+| Sprint 10 | Reporting & QA scenarios                     |
+| Sprint 11 | Portfolio polish & interview preparation     |
 
 ---
 
-# 📖 Daily Study Routine
+## QA Focus Areas
 
-Approximately **2 hours per day**.
-
-| Activity              | Time   |
-| --------------------- | ------ |
-| Learn SQL Concept     | 30 min |
-| Practice SQL Problems | 45 min |
-| Portfolio Development | 35 min |
-| Jira & GitHub Updates | 10 min |
-
----
-
-# 📋 Portfolio Deliverables
-
-By the end of this project, this repository will include:
-
-* SQL fundamentals
-* SQL JOIN examples
-* Aggregate queries
-* Window function examples
-* Common Table Expressions (CTEs)
-* Data validation queries
-* Exploratory SQL scripts
-* QA test cases
-* Bug investigation reports
-* Sprint reviews
-* Sprint retrospectives
-* Release notes
-* Interview preparation notes
-
----
-
-# 🧪 QA Focus Areas
-
-This project emphasizes practical QA database testing techniques, including:
+This project is built around the SQL skills QA Engineers use most in practice:
 
 * Data integrity validation
 * Referential integrity checks
@@ -179,89 +96,36 @@ This project emphasizes practical QA database testing techniques, including:
 
 ---
 
-# 📈 Progress Tracker
+## Current Status
 
-## SQL Topics
+**Sprint 0 — Project Initialization** (in progress)
 
-* [ ] SQL Fundamentals
-* [ ] Filtering
-* [ ] Aggregation
-* [ ] JOINs
-* [ ] Subqueries
-* [ ] Window Functions
-* [ ] CTEs
-* [ ] Date Functions
-* [ ] Advanced SQL
+- [x] Environment setup
+- [ ] Database setup
+- [ ] Schema exploration
+- [ ] Jira project planning
+- [ ] Repository organization
+- [ ] QA documentation foundation
+- [ ] Sprint 0 review
 
-## Portfolio
-
-* [ ] Project Documentation
-* [ ] Database Exploration
-* [ ] Validation Queries
-* [ ] Test Cases
-* [ ] Bug Investigations
-* [ ] Reports
-* [ ] Interview Notes
-
-## Agile
-
-* [ ] Sprint 0
-* [ ] Sprint 1
-* [ ] Sprint 2
-* [ ] Sprint 3
-* [ ] Sprint 4
-* [ ] Sprint 5
-* [ ] Sprint 6
-* [ ] Sprint 7
-* [ ] Sprint 8
-* [ ] Sprint 9
-* [ ] Sprint 10
-* [ ] Sprint 11
+This repository is under active development, with new sprints, SQL work, and QA deliverables committed regularly. Check back for updates, or see the [Project Roadmap](#project-roadmap) above for what's coming next.
 
 ---
 
-# 🚀 Current Status
-
-**Current Sprint:** Sprint 0 — Project Initialization
-- [x] Day 1 - Environment Setup
-- [ ] Day 2 - Database Setup
-- [ ] Day 3 - Schema Exploration
-- [ ] Day 4 - Jira Planning
-- [ ] Day 5 - Repository Organization
-- [ ] Day 6 - QA Documentation
-- [ ] Day 7 - Sprint Review
-
-### Current Objectives
-
-* Set up development environment
-* Configure GitHub repository
-* Create Jira project
-* Import sample database
-* Explore database schema
-* Document project foundation
-
----
-
-# 🤝 Future Enhancements
-
-Planned improvements include:
+## Planned Enhancements
 
 * Automated SQL validation scripts
 * API testing examples
-* Playwright database validation scenarios
+* Playwright-based database validation scenarios
 * CI/CD integration
-* Sample interview exercises
-* Additional sample databases
+* Additional sample databases and interview exercises
 
 ---
 
-# 📄 License
+## License
 
-This project is licensed under the MIT License.
+MIT License.
 
----
+## About Me
 
-## 👋 About Me
-
-I'm building this portfolio as part of my transition into a Software QA Engineer role. The purpose of this repository is to demonstrate practical SQL knowledge, database testing skills, and familiarity with Agile QA workflows through a realistic, hands-on project.
-
+I'm a QA Engineer building this project to demonstrate practical SQL skills, database testing methodology, and Agile QA workflows against a realistic application dataset. Feedback and suggestions are welcome — feel free to open an issue.
