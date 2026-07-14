@@ -4,7 +4,11 @@
 ![SQL](https://img.shields.io/badge/SQL-MySQL-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A hands-on portfolio project demonstrating SQL proficiency, database testing methodology, and Agile QA practices — built by simulating the day-to-day work of a QA Engineer on a software team, rather than completing isolated tutorial exercises.
+A simulated QA project for a fictional e-commerce application,
+demonstrating how a QA Engineer validates data,
+creates test cases,
+investigates defects,
+and uses SQL throughout the software testing lifecycle.
 
 ---
 
@@ -37,14 +41,31 @@ qa-engineer-portfolio-bootcamp/
 │   ├── test-strategy.md
 │   └── templates/
 │       └── daily-template.md
-├── leetcode/                # SQL problem-solving practice
 ├── portfolio/               # Polished, portfolio-ready deliverables
+│   ├──  sql-validation-report.md
+│   └── customer-data-validation.md
 ├── sprint-workbooks/        # Daily checklists per sprint (goals, tasks, Jira IDs, reflections)
-│   └── sprint-00/
-│       └── day-01.md
-├── sql/                     # SQL practice organized by concept (joins, subqueries, window functions, etc.)
-└── test-cases/               # Written QA test cases
+│   ├──  sprint-00/
+│       └── setupo-progress.md
+│   └── sprint-01/
+│       └── sprint-01-progress.md
+├── sql/                     # SQL practice organized by sprint/feature (joins, subqueries, window functions, etc.)
+│   ├── sprint-01-customer-management/
+│   ├── sprint-02-product-catalog/
+│   ├── sprint-03-order-management/
+│   ├── sprint-04-payment-processing/
+│   ├── sprint-05-inventory-management/
+│   └── sprint-06-reporting-analytics/
+└── test-cases/               # Written QA test cases, organized by sprint/feature
+│   ├── sprint-01-customer-management/
+│   ├── sprint-02-product-catalog/
+│   ├── sprint-03-order-management/
+│   ├── sprint-04-payment-processing/
+│   ├── sprint-05-inventory-management/
+│   └── sprint-06-reporting-analytics/
 ```
+
+> **Note:** `sprint-04` through `sprint-06` folders are named here to lock in the convention ahead of time; they'll be added to the repo as those sprints begin.
 
 ---
 
@@ -62,53 +83,62 @@ qa-engineer-portfolio-bootcamp/
 
 ## Project Roadmap
 
-Work is organized into 12 Agile sprints, each producing a reviewable deliverable.
+This roadmap tracks the sprint-by-sprint development of the ShopSmart database portfolio project, structured to mirror a real Agile QA workflow — from environment setup through production-style bug investigation and final portfolio polish.
 
-| Sprint    | Focus                                     |
-| --------- | ------------------------------------------ |
-| Sprint 0  | Project setup & planning                    |
-| Sprint 1  | SQL fundamentals                            |
-| Sprint 2  | Filtering & aggregation                     |
-| Sprint 3  | SQL joins                                   |
-| Sprint 4  | Advanced joins & reporting                  |
-| Sprint 5  | Subqueries                                  |
-| Sprint 6  | Window functions                            |
-| Sprint 7  | CTEs & date functions                       |
-| Sprint 8  | Database validation                         |
-| Sprint 9  | Bug investigation                           |
-| Sprint 10 | Reporting & QA scenarios                     |
-| Sprint 11 | Portfolio polish & interview preparation     |
+Each sprint builds on the SQL concepts from the previous one while introducing a distinct category of QA activity, so the project demonstrates range rather than repeating the same type of validation each time.
 
----
+| Sprint | Feature | Primary SQL Topics | QA Focus | Sprint Artifacts |
+|---|---|---|---|---|
+| **Sprint 0** | Project Setup | — | Environment setup, GitHub/Jira configuration, ShopSmart database deployment and verification | Test strategy draft, environment setup checklist, Jira board configured with epics/backlog |
+| **Sprint 1** | Customer Management | SELECT, WHERE, ORDER BY, LIMIT, DISTINCT, LIKE, IS NULL | Boundary and negative testing — empty strings, NULL emails, duplicate customers, malformed input | Test cases (customer validation), 1–2 logged defects, sprint retro note |
+| **Sprint 2** | Product Catalog | GROUP BY, COUNT, SUM, AVG, HAVING | Data quality checks — orphaned products, negative prices, inconsistent category assignments | Data quality test suite, defect log entries, sprint retro note |
+| **Sprint 3** | Order Management | JOINs, multi-table queries | End-to-end order validation across customer, product, and order tables; referential integrity checks | Traceability matrix (stories → test cases), test case doc, sprint retro note |
+| **Sprint 4** | Payment Processing | Subqueries, EXISTS, IN | Financial validation — reconciliation totals, rounding errors, failed/partial transaction states | Reconciliation test cases, defect log, sprint retro note |
+| **Sprint 5** | Inventory Management | CTEs, CASE, COALESCE | Inventory reconciliation — recorded stock vs. actual stock, negative/impossible quantities | Reconciliation report, defect log, sprint retro note |
+| **Sprint 6** | Reporting & Analytics | Window Functions, ranking, running totals | Report validation and regression testing against earlier sprint data | Regression test suite, test summary report (interim), sprint retro note |
+| **Sprint 7** | Production Bug Investigation | All SQL concepts | Root cause analysis on injected/discovered defects, formal QA defect reporting | Defect investigation write-up, RCA doc, final test summary report |
+| **Sprint 8** | Portfolio & Interview Prep | Review and optimization | Documentation review, portfolio polish, interview talking points | Final README/docs pass, polished repo structure, interview prep notes |
 
-## QA Focus Areas
+### Notes on Sequencing
 
-This project is built around the SQL skills QA Engineers use most in practice:
+Order Management (Sprint 3) is intentionally sequenced before Inventory Management (Sprint 5), even though in a live system order placement typically depends on inventory checks. This ordering follows SQL topic progression (JOINs before CTEs) rather than strict domain dependency — Sprint 5's reconciliation work revisits and validates the order data introduced in Sprint 3.
 
-* Data integrity validation
-* Referential integrity checks
-* Duplicate record detection
-* Missing data validation
-* Business rule verification
-* Reporting validation
-* Root cause investigation
-* Regression testing with SQL
+### Sprint Cadence
+
+Each sprint closes with three deliverables, consistent across the project:
+1. A test case or validation document specific to that sprint's feature
+2. At least one logged defect or data quality finding (even if minor) — see [`docs/test-strategy.md`](docs/test-strategy.md) for defect severity conventions
+3. A short retrospective note capturing what was learned or what would be done differently
+
+This cadence is what ties the Jira board, commit history, and documentation together into a coherent story rather than a static set of deliverables.
 
 ---
 
 ## Current Status
 
-**Sprint 0 — Project Initialization** (in progress)
+### Sprint 0 — Completed ✅
 
-- [x] Environment setup
-- [ ] Database setup
-- [ ] Schema exploration
-- [ ] Jira project planning
-- [ ] Repository organization
-- [ ] QA documentation foundation
-- [ ] Sprint 0 review
+- [x] Development environment configured
+- [x] GitHub repository initialized
+- [x] ShopSmart database created
+- [x] Sample data imported
+- [x] Database verification completed
+- [x] Jira project configured
+- [x] Repository structure established
 
-This repository is under active development, with new sprints, SQL work, and QA deliverables committed regularly. Check back for updates, or see the [Project Roadmap](#project-roadmap) above for what's coming next.
+---
+
+### Sprint 1 — In Progress 🚧
+
+Current Feature:
+
+Customer Management
+
+Working on:
+
+- Business requirements review
+- SQL validation queries
+- Customer Registration test cases
 
 ---
 

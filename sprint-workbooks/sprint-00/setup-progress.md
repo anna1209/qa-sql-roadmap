@@ -43,20 +43,20 @@ Issue IDs
 
 Commit Message
 
-Initial project setup and Sprint 0 Day 1 completion
+Project Setup/Sprint 0 Complete
 ---
 
 ## 📖 Reflection
 
-### What did I learn today?
-- Created my project repository.
-- Set up my local SQL development environment.
-- Organized the project using a simple folder structure.
-- Created my first Jira backlog.
+### What did I complete
+- Created project repository.
+- Set up local SQL development environment.
+- Created and finalized repo structure.
+- Created Jira backlog.
+- Genreated and verified my own database using AI.
 ---
 
-### What should I review tomorrow?
-- Import database
-- Verify tables
-- Explore schema
+### Next 
+- Validate the new Customer Management feature.
+- Update Jira backlog with User Stories and create corresponding test cases.
 ---
