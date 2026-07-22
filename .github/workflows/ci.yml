@@ -68,7 +68,7 @@ jobs:
           mkdir -p test-reports
           pytest ./test-cases/ \
             -v \
-            --html=test-reports/sql_test_report.html
+            --html=test-reports/sql_test_report.html \
             --self-contained-html
 
       - name: Upload Test Report
