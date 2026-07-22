@@ -22,6 +22,36 @@ This document defines the approach used to validate data quality and business ru
 * Performance and load testing.
 * Security/penetration testing.
 
+## Test Data & Environment Strategy
+### Environment Separation
+Testing runs against an isolated copy so that schema validation and negative tests can be performed freely without risking the source dataset.
+
+| Environment | Purpose | Access |
+|---|---|---|
+| Source / Primary | The AI-generated sample dataset used as the canonical schema + data | Read-only reference |
+| Test (`shopsmart_test`) | Local copy restored from a schema+data dump, used for all test execution | Full read/write, disposable |
+
+This mirrors real-world `dev → test/QA → staging → production` separation, scaled down to fit a single-developer portfolio project.
+
+### Setting Up the Test Environment
+
+```
+bash setup_test_db.sh
+```
+
+All test cases are run against `shopsmart_test`, not `shopsmart`. If the test schema drifts or gets corrupted by a failed test, it's dropped and re-restored from the dump — cheap and disposable by design.
+
+### Transactions for Destructive Tests
+
+For negative/constraint tests that intentionally attempt an invalid insert (e.g., TC-CM-005a, TC-CM-011, TC-CM-012, TC-CM-013), each test is wrapped in a transaction and rolled back regardless of outcome.
+
+
+### Why This Matters
+
+- **Isolation** — a failed or buggy test case can't corrupt data other tests depend on.
+- **Repeatability** — the test schema can be torn down and rebuilt from the dump at any time, giving every test run a known starting state.
+- **Honesty in reporting** — test results reflect the schema's actual constraint enforcement, not artifacts of leftover test data from a previous run.
+
 ## Test Levels
 
 | Level                     | What it checks                                                        |

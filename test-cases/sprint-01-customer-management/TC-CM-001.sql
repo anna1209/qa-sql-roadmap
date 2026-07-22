@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS Customer_count FROM customers

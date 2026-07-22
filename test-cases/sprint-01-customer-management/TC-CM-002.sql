@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS Address_count FROM addresses;

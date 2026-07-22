@@ -1,0 +1,11 @@
+TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,IS_NULLABLE
+shopsmart_test,customers,customer_id,NO
+shopsmart_test,customers,first_name,NO
+shopsmart_test,customers,last_name,NO
+shopsmart_test,customers,email,NO
+shopsmart_test,customers,phone,YES
+shopsmart_test,customers,date_of_birth,YES
+shopsmart_test,customers,account_status,NO
+shopsmart_test,customers,created_at,NO
+shopsmart_test,customers,updated_at,NO
+shopsmart_test,customers,is_deleted,NO

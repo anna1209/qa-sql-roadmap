@@ -1,0 +1,13 @@
+TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,IS_NULLABLE
+shopsmart_test,addresses,address_id,NO
+shopsmart_test,addresses,customer_id,NO
+shopsmart_test,addresses,address_type,NO
+shopsmart_test,addresses,address_line_1,NO
+shopsmart_test,addresses,address_line_2,YES
+shopsmart_test,addresses,city,NO
+shopsmart_test,addresses,state,NO
+shopsmart_test,addresses,postal_code,NO
+shopsmart_test,addresses,country,NO
+shopsmart_test,addresses,is_default,NO
+shopsmart_test,addresses,created_at,NO
+shopsmart_test,addresses,updated_at,NO

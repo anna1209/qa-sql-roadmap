@@ -1,0 +1,3 @@
+COLUMN_NAME,CONSTRAINT_NAME
+address_id,PRIMARY
+customer_id,fk_address_customer
