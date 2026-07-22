@@ -6,16 +6,18 @@ def get_connection():
 
 def verity_total_customer_count():
     """
-    TC-CM-001:
-    Verify total customer count
+    TC-CM-003:
+    Verify every customer has at least one address in the addresses table.
     """
 
     conn = get_connection()
     cursor = conn.cursor()
 
     query = """
-    SELECT COUNT(*) AS Customer_count 
-    FROM customers
+    SELECT c.customer_id 
+    FROM customers c
+    WHERE NOT EXISTS(SELECT * FROM addresses a 
+       WHERE a.customer_id = c.customer_id);
     """
 
     cursor.execute(query)
@@ -23,3 +25,7 @@ def verity_total_customer_count():
 
     cursor.close()
     conn.close()
+
+    assert len(results) == 0, (
+        f"Found {len(results)} customer(s) without an address: {results}"
+    )
