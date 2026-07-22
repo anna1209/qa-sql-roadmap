@@ -7,7 +7,7 @@ def test_verify_customers_have_addresses(db_connection):
     Verify every customer has at least one address in the addresses table.
     """
 
-    conn = db_connection()
+    conn = db_connection
     cursor = conn.cursor()
 
     query = """
