@@ -62,11 +62,11 @@ jobs:
 
       - name: Debug - List files
         run: find . -name "test_*.py" -o -name "*_test.py"
-        
+
       - name: Run tests
         run: |
           mkdir -p test-reports
-          pytest test-cases/ \
+          pytest ./test-cases/ \
             -v \
             --html=test-reports/sql_test_report.html
             --self-contained-html
