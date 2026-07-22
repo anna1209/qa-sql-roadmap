@@ -1,16 +1,13 @@
 from conftest import db_connection
 import mysql.connector
 
-def get_connection():
-    return mysql.connector.connect(**db_connection)
-
-def test_verify_customers_have_addresses():
+def test_verify_customers_have_addresses(db_connection):
     """
     TC-CM-003:
     Verify every customer has at least one address in the addresses table.
     """
 
-    conn = get_connection()
+    conn = db_connection()
     cursor = conn.cursor()
 
     query = """
