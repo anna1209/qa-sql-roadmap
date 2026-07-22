@@ -60,6 +60,9 @@ jobs:
         run: |
           mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < database/seed-data/shopsmart_v1_0_seed.sql
 
+      - name: Debug - List files
+        run: find . -name "test_*.py" -o -name "*_test.py"
+        
       - name: Run tests
         run: |
           mkdir -p test-reports
