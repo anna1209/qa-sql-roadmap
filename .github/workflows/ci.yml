@@ -54,19 +54,19 @@ jobs:
 
       - name: Load database schema
         run: |
-          mysql -h 127.0.0.1 -u root -proot qa_ecommerce < database/schema/shopsamrt_v1_0_schema.sql
+          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < database/schema/shopsmart_v1_0_schema.sql
 
       - name: Load Seed Data
         run: |
-          mysql -h 127.0.0.1 -u root -proot qa_ecommerce < database/seed_data/shopsmart_seed.sql
+          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < database/seed-data/shopsmart_seed.sql
 
       - name: Run tests
         run: |
           mkdir -p test-reports
-          pytest automation/tests \
+          pytest test-cases \
             -v \
-            - html=reports/sql_test_report.html \
-            - self-contained-html
+            --html=test-reports/sql_test_report.html
+            --self-contained-html
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4
