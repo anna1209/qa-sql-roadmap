@@ -46,11 +46,17 @@ jobs:
 
       - name: Wait for MySQL service to be ready
         run: |
-          until mysqladmin ping -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }}
-          do
-            echo "Waiting for MySQL service..."
-            sleep 5
+          for i in {1..30}; do
+            if mysqladmin ping -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} --silent; then
+              echo "MySQL is ready!"
+              exit 0
+            fi
+            echo "Waiting for MySQL service... (attempt $i/30)"
+            sleep 2
           done
+          echo "MySQL failed to start"
+          exit 1
+
 
       - name: Load database schema
         run: |
