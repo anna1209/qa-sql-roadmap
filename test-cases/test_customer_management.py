@@ -4,7 +4,7 @@ import mysql.connector
 def get_connection():
     return mysql.connector.connect(**db_connection)
 
-def verify_customers_have_addresses():
+def test_verify_customers_have_addresses():
     """
     TC-CM-003:
     Verify every customer has at least one address in the addresses table.
