@@ -1,3 +1,4 @@
 pytest
 pytest-html
+pymysql
 mysql-connector-python
