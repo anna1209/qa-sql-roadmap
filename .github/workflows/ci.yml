@@ -63,7 +63,7 @@ jobs:
       - name: Run tests
         run: |
           mkdir -p test-reports
-          pytest test-cases \
+          pytest test-cases/ \
             -v \
             --html=test-reports/sql_test_report.html
             --self-contained-html
