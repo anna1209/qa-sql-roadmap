@@ -54,11 +54,11 @@ jobs:
 
       - name: Load database schema
         run: |
-          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < schema.sql
+          mysql -h 127.0.0.1 -u root -proot qa_ecommerce < database/schema/shopsamrt_v1_0_schema.sql
 
       - name: Load Seed Data
         run: |
-          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < seed_data.sql
+          mysql -h 127.0.0.1 -u root -proot qa_ecommerce < database/seed_data/shopsmart_seed.sql
 
       - name: Run tests
         run: |
