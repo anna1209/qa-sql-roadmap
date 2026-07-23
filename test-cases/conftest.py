@@ -16,5 +16,3 @@ def db_connection():
         autocommit=False,
     )
     yield conn
-    conn.rollback()
-    conn.close()

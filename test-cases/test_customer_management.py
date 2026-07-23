@@ -21,6 +21,7 @@ def test_verify_customers_have_addresses(db_connection):
     results = cursor.fetchall()
 
     cursor.close()
+    conn.rollback()
     conn.close()
 
     assert len(results) == 0, (

@@ -15,7 +15,7 @@ jobs:
         image: mysql:8.0.46
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          MYSQL_DATABASE: shopsmart_test
+          MYSQL_DATABASE: shopsmart
         ports:
           - 3306:3306
         options: >-
@@ -28,7 +28,7 @@ jobs:
       DB_HOST: 127.0.0.1
       DB_USER: root
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      DB_NAME: shopsmart_test
+      DB_NAME: shopsmart
 
     steps:
       - name: Checkout code
@@ -60,11 +60,11 @@ jobs:
 
       - name: Load database schema
         run: |
-          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < database/schema/shopsmart_v1_0_schema.sql
+          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart < database/schema/shopsmart_v1_0_schema.sql
 
       - name: Load Seed Data
         run: |
-          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart_test < database/seed-data/shopsmart_v1_0_seed.sql
+          mysql -h 127.0.0.1 -u root -p${{ secrets.DB_PASSWORD }} shopsmart < database/seed-data/shopsmart_v1_0_seed.sql
 
       - name: Debug - List files
         run: find . -name "test_*.py" -o -name "*_test.py"
